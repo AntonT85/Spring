@@ -5,14 +5,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class Double {
+public class DoubleController {
 
     @GetMapping("/double")
-    public Integer doubleValue(@RequestParam(required = false) String value) {
-        if (value == null) {
-            return 0;
-        }
-        return Integer.valueOf(value) * 2;
+    public Integer doubleValue(@RequestParam(defaultValue = "0") Integer value) {
+        return value * 2;
     }
 
 }
