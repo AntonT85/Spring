@@ -7,12 +7,21 @@ spring:
       enabled: true
 
   jpa:
-    #generate-ddl: false
-    generate-ddl: true
+    generate-ddl: false
+    #generate-ddl: true
     hibernate:
-      #ddl-auto: none
-    ddl-auto: create-drop
+      ddl-auto: none
+      #ddl-auto: create-drop
     show-sql: true
 
+  #postgres
   datasource:
-    url: jdbc:h2:mem:testdb
+    url: jdbc:postgresql://localhost:5432/edupb
+    username: admin
+    password: admin
+    driverClassName: org.postgresql.Driver
+    initialization-mode: always
+
+  liquibase:
+    enabled: true
+    change-log: classpath:db.changelog/rootChangeLog.xml
