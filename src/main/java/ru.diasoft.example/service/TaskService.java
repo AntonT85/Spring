@@ -11,5 +11,6 @@ public interface TaskService {
     List<Task> getAll();
     Task getById(long id);
     void deleteById(long id);
+    List<Task> findByName(String name);
 
 }

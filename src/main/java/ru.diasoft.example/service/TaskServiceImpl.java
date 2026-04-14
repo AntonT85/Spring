@@ -58,4 +58,8 @@ public class TaskServiceImpl implements TaskService {
         repository.delete(task);
 
     }
+    @Override
+    public List<Task> findByName(String name) {
+        return repository.findByName(name);
+    }
 }
