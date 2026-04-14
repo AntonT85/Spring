@@ -15,12 +15,15 @@ spring:
     show-sql: true
 
   #postgres
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/edupb
+#    username: admin
+#    password: admin
+#    driverClassName: org.postgresql.Driver
+#    initialization-mode: always
+
   datasource:
-    url: jdbc:postgresql://localhost:5432/edupb
-    username: admin
-    password: admin
-    driverClassName: org.postgresql.Driver
-    initialization-mode: always
+    url: jdbc:h2:mem:testdb
 
   liquibase:
     enabled: true
